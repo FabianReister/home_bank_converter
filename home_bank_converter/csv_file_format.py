@@ -103,6 +103,21 @@ class CsvFileFormatSparkasse(CsvFileFormat):
     def __repr__(self):
         return self.name
 
+class CsvFileFormatLHV(CsvFileFormat):
+    name = "lhv"
+
+    header_pattern = '﻿"Customer account no","Document no","Date","Sender/receiver account","Sender/receiver name","Sender bank code","Empty","Debit/Credit (D/C)","Amount","Reference number","Archiving code","Description","Fee","Currency","Personal code or register code","Sender/receiver bank BIC","Ultimate debtor name","Transaction reference","Account servicer reference"'
+
+    csv_fields = LHVFields()
+
+    dialect = DialectLHV()
+
+    date_format = "%Y-%m-%d"
+
+
+    def __repr__(self):
+        return self.name
+
 
 class CsvFileFormatRegistry:
     registry: List[CsvFileFormat] = list()
@@ -139,3 +154,4 @@ csv_file_format_registry.register(CsvFileFormatDkbVisa())
 csv_file_format_registry.register(CsvFileFormatDkbGiro())
 csv_file_format_registry.register(CsvFileFormatVBGiro())
 csv_file_format_registry.register(CsvFileFormatSparkasse())
+csv_file_format_registry.register(CsvFileFormatLHV())

@@ -29,7 +29,6 @@ class VBGiroFields(HomeBankFields):
     AMOUNT = u"Umsatz"
     MEMO = u"Vorgang/Verwendungszweck"
     PAYEE = u"Empfänger/Zahlungspflichtiger"
-
     SIGN = u" "
 
 
@@ -38,3 +37,11 @@ class SparkasseFields(HomeBankFields):
     AMOUNT = u"Betrag"
     MEMO = u"Verwendungszweck"
     PAYEE = u"Beguenstigter/Zahlungspflichtiger"
+
+
+class LHVFields(HomeBankFields):
+    DATE = u"Date"
+    AMOUNT = u"Amount"
+    MEMO = u"Description"
+    PAYEE = u"Sender/receiver name"
+
