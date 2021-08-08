@@ -2,7 +2,7 @@ import csv
 import re
 from typing import List, Optional
 
-from home_bank_converter.csv_dialects import DialectVB, DialectDKB, DialectSparkasse
+from home_bank_converter.csv_dialects import DialectVB, DialectDKB, DialectSparkasse, DialectLHV
 from home_bank_converter.home_bank_fields import *
 
 
